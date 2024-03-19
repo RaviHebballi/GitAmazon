@@ -48,9 +48,12 @@ public class ProductCatalog extends  AbstractComponent {
 		}
 	   
    }
-  
+   public CheckOutPage SwitchWindow() {
+		driver.getWindowHandles().forEach(tab -> driver.switchTo().window(tab));
+		CheckOutPage ckout = new CheckOutPage(driver);
+		return ckout;
    
-   
+   }  
   
 } 
 

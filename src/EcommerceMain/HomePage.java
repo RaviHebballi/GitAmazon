@@ -30,11 +30,14 @@ public class HomePage extends  AbstractComponent {
 		  @FindBy(id="ap_password")
 		  WebElement userpasswrd;
 		  
-		  public  void HomePageApplication(String UserNumber,String Passward) {
+		  public  ProductCatalog HomePageApplication(String UserNumber,String Passward) {
 			  signin.click();
 			  userId.sendKeys(UserNumber);
 			  continu.click();
 			  userpasswrd.sendKeys(Passward);
+			  driver.get("https://www.amazon.in/?ref_=nav_ya_signin");
+			  ProductCatalog Pc = new ProductCatalog(driver);
+			return Pc;
 		  }
 		  
 		  public void GoTo() {

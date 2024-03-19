@@ -74,12 +74,12 @@ public class AmazonShopping {
 			
 			WebElement element = driver.findElement(By.id("native_dropdown_selected_size_name"));
 			Select dropdown = new Select(element);
-			dropdown.selectByIndex(5);
+			dropdown.selectByIndex(4);
 		} catch (StaleElementReferenceException e) {
 //			driver.navigate().refresh();
 			WebElement element = driver.findElement(By.id("native_dropdown_selected_size_name"));
 			Select dropdown = new Select(element);
-			dropdown.selectByIndex(5);
+			dropdown.selectByIndex(4);
 		}
 		try {
 			driver.findElement(By.cssSelector("input[title='Add to Shopping Cart']")).click();
@@ -88,7 +88,7 @@ public class AmazonShopping {
 			driver.findElement(By.cssSelector("input[title='Add to Shopping Cart']")).click();
 		}
 		File file = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
-		FileHandler.copy(file, new File("C:\\Users\\DELL\\eclipse-workspace\\RaviAutomates\\CaptchaImages\\screenshott.png" ));
+		FileHandler.copy(file, new File("C:\\Users\\DELL\\eclipse-workspace\\RaviAutomates\\ScreenShots\\screenshott.png" ));
 
 		String cnfmsg = driver
 				.findElement(By.id("NATC_SMART_WAGON_CONF_MSG_SUCCESS")).getText();

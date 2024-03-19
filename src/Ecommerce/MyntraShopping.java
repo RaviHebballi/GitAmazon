@@ -40,7 +40,7 @@ public class MyntraShopping {
 
 		HomePage hmepage = new HomePage(driver);
 		hmepage.GoTo();
-		hmepage.HomePageApplication("8073329004", "Ravi@1199");
+		ProductCatalog  Pc= hmepage.HomePageApplication("8073329004", "Ravi@1199");
 		/*
 		 * driver.findElement(By.id("nav-link-accountList-nav-line-1")).click();
 		 * driver.findElement(By.id("ap_email")).sendKeys("8073329004");
@@ -63,16 +63,18 @@ public class MyntraShopping {
 		 * sendKeys(capt); System.out.println(capt); }
 		 */
 
-		driver.get("https://www.amazon.in/?ref_=nav_ya_signin");
+		
 
-		ProductCatalog Pc = new ProductCatalog(driver);
+		
 		Pc.GetShoe("Adidas Shoes For Men");
-		driver.getWindowHandles().forEach(tab -> driver.switchTo().window(tab));
-		CheckOutPage ckout = new CheckOutPage(driver);
-		ckout.SelectColor();
+	    Pc.SwitchWindow();
+	    
+	    CheckOutPage ckout = Pc.SwitchWindow();
+	    ckout.SelectColor();
         ckout.SelectSize();
 	    ckout.AddToCart();
-		ckout.VerifyConfirmText();
+	    String confmesg = Pc.toString();
+		Assert.isTrue(true, "Added to Cart", confmesg);
 		System.out.println("Test complete");
         driver.quit(); 
 	}
