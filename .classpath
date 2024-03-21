@@ -5,12 +5,13 @@
 			<attribute name="maven.pomderived" value="true"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry including="**/*.java" kind="src" output="target/classes" path="src">
+	<classpathentry including="**/*.java" kind="src" output="target/classes" path="src-main">
 		<attributes>
 			<attribute name="optional" value="true"/>
 			<attribute name="maven.pomderived" value="true"/>
 		</attributes>
 	</classpathentry>
+	<classpathentry kind="src" path="src-test"/>
 	<classpathentry kind="lib" path="C:/Users/DELL/Downloads/selenium-java-4.16.1/selenium-api-4.16.1.jar"/>
 	<classpathentry kind="lib" path="C:/Users/DELL/Downloads/selenium-java-4.16.1/selenium-api-4.16.1-sources.jar"/>
 	<classpathentry kind="lib" path="C:/Users/DELL/Downloads/selenium-java-4.16.1/selenium-chrome-driver-4.16.1.jar"/>
