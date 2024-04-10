@@ -37,10 +37,10 @@ public class CheckOutPage extends AbstractComponent {
 	 public void SelectSize() {
 		 try {
 		   Select dropdown = new Select (dropelement);
-		   dropdown.selectByIndex(6);
+		   dropdown.selectByIndex(4);
 		 }catch(StaleElementReferenceException e) {
 			 Select dropdown = new Select (dropelement);
-			   dropdown.selectByIndex(6);
+			   dropdown.selectByIndex(4);
 		 }
 	   }
 	 public void AddToCart() throws IOException {

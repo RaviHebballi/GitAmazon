@@ -7,13 +7,15 @@ import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.annotations.BeforeTest;
+import org.testng.annotations.Test;
 
 import EcommerceMain.HomePage;
 
 public class BaseTest {
-	WebDriver driver;
+	public WebDriver driver;
 	
-	public WebDriver BrowserInitilizer() throws IOException {
+	public WebDriver BrowserInitilizer(WebDriver driver) throws IOException {
 		Properties pro = new Properties();
 		FileInputStream fis = new FileInputStream("C:\\Users\\DELL\\GitAmazon\\src-main\\GlobalProperties\\GlobalData.properties");
 		pro.load(fis);
@@ -21,8 +23,8 @@ public class BaseTest {
 		
 		if(BrowserName.equalsIgnoreCase("chrome")) 
 		{
-			System.setProperty("webdriver.driver.chrome", "C:\\Users\\DELL\\Downloads\\chromedriver-win64.exe");
-			WebDriver driver = new ChromeDriver();
+			System.setProperty("webdriver.driver.chrome", "C:\\Users\\DELL\\Downloads\\chromedriver-win64\\chromedriver2.exe");
+			driver = new ChromeDriver();
 		}
 		if (BrowserName.equalsIgnoreCase("Firefox")) 
 		{
@@ -38,9 +40,9 @@ public class BaseTest {
 	driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 	return driver;
 	}
-	
+	@BeforeTest
 	public HomePage lounchApp() throws IOException {
-		driver=BrowserInitilizer();
+		driver=BrowserInitilizer(driver);
 		HomePage hmepage = new HomePage(driver);
 		hmepage.GoTo();
 		return hmepage;

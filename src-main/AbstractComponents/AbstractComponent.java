@@ -14,7 +14,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class AbstractComponent  {
 	WebDriver driver;
-	String path = "C:\\Users\\DELL\\eclipse-workspace\\RaviAutomates\\ScreenShots\\screenshot1.png";
+	String path = "C:\\Users\\DELL\\eclipse-workspace\\RaviAutomates\\ScreenShots\\screenshot2.png";
 	public  AbstractComponent(WebDriver driver) {
 		
 		this.driver = driver;
