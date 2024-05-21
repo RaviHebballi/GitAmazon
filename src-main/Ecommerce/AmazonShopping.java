@@ -62,14 +62,14 @@ public class AmazonShopping {
 
 			if (Shoename.contains("adidas")) {
 
-				driver.findElement(By.cssSelector("img[alt='Adidas Mens Fluento M Running Shoe']")).click();
+				driver.findElement(By.cssSelector("img[alt='adidas Mens Drogo M Running Shoe']")).click();
 				break;
 			}
 
 		}
 
 		driver.getWindowHandles().forEach(tab -> driver.switchTo().window(tab));
-		driver.findElement(By.cssSelector("img[alt='MLEAD/STONE/LUCLEM']")).click();
+		driver.findElement(By.cssSelector("img[alt='TRAROY/MYSBLU/FTWWHT']")).click();
 		try {
 			
 			WebElement element = driver.findElement(By.id("native_dropdown_selected_size_name"));

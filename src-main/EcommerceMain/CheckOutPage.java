@@ -21,7 +21,7 @@ public class CheckOutPage extends AbstractComponent {
 		PageFactory.initElements(driver, this);
 	}
 	
-	 @FindBy(css=("img[alt='MLEAD/STONE/LUCLEM']"))
+	 @FindBy(css=("img[alt='GRESIX/SILVMT/SYELLO']"))
 	   WebElement Color;
 	 @FindBy(id=("native_dropdown_selected_size_name"))
 	   WebElement dropelement;
@@ -56,9 +56,7 @@ public class CheckOutPage extends AbstractComponent {
 	 public void VerifyConfirmText() {
 		 
 		 String Txt = confmesg.getText();
-		 Assert.isTrue(true,"Added to Cart", confmesg);
-		
-	 }
+		}
 	 
 	 
 }

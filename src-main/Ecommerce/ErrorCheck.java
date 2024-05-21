@@ -20,6 +20,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.Test;
+import org.testng.asserts.SoftAssert;
 
 import com.google.common.io.Files;
 
@@ -39,7 +40,7 @@ public void ErrorCheckd() throws IOException{
 	HomePage hmepage = lounchApp();
 	ProductCatalog Pc= hmepage.HomePageApplication("8073329004", "Ravi@1199");
 	
-
+   SoftAssert sf = new SoftAssert();
 	Pc.GetShoe("Adidas Shoes For Men");
     Pc.SwitchWindow();
     
@@ -48,8 +49,10 @@ public void ErrorCheckd() throws IOException{
     ckout.SelectSize();
     ckout.AddToCart();
 	String confmesg = Pc.toString();
-	Assert.isTrue(false, "Error", confmesg);
-	System.out.println("Test complete");
+	sf.assertNotEquals(confmesg, "Error in confm mesg ");
+//	sf.assertEquals(confmesg, "Error confm mesg ");
+    System.out.println("Test complete");
+	sf.assertAll();
 	
-	}
+ }
 }

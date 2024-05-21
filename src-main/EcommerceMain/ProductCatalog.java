@@ -25,7 +25,7 @@ public class ProductCatalog extends  AbstractComponent {
    WebElement search;
    @FindBy(css="h2.a-size-mini.s-line-clamp-1") 
     List <WebElement> AllShoes;
-   @FindBy(css="img[alt='Adidas Mens Fluento M Running Shoe")
+   @FindBy(css="img[alt='adidas Mens Drogo M Running Shoe")
    WebElement SelectedShoe; 
    @FindBy(css="h2.a-size-mini.s-line-clamp-1")
    WebElement listOfShoes;
